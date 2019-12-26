@@ -25,6 +25,9 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <main role="main">
+
      <!--
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,7 +73,13 @@
      <!-- <link href="jumbotron.css" rel="stylesheet"> -->
      </head>
   <body>
+    <header>
+    <%= render 'layouts/nav/public' %>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
   <%= fa_icon "baby", text: "BB", class: 'mx-2', size: '3x' %>
+  <%= render 'layouts/footer' %>
 </html>
