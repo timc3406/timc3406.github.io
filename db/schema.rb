@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_215719) do
+ActiveRecord::Schema.define(version: 2019_12_26_190330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 2019_12_18_215719) do
     t.text "state"
     t.text "reason_code"
     t.text "agent_state_time"
+  end
+
+  create_table "blogposts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.text "body"
   end
 
   create_table "projects", force: :cascade do |t|

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blogposts</h1>
+
+
+<%= link_to 'New Blogpost', new_blogpost_path %>
+
+<br>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <% @blogposts.each do |blogpost| %>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title"><%= blogpost.title %></h2>
+        <p class="blog-post-meta"><%= blogpost.created_at %> by <a href="#">Timothy Chang</a></p>
+
+        <p><%= blogpost.body %></p>
+        <hr>
+        <%= link_to 'Show', blogpost %>
+        <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
+        <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+    </div><!-- /.blog-main -->
+    <% end %>
+    <nav class="blog-pagination">
+      <a class="btn btn-outline-primary" href="#">Older</a>
+      <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+    </nav>
+
+  </div><!-- /.row -->
+
+</main>
