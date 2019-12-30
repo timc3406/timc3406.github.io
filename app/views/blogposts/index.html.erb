@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Blogposts</h1>
 
 
@@ -8,8 +8,10 @@
 <br>
 
 <main role="main" class="container">
+
   <div class="row">
     <div class="col-md-8 blog-main">
+
       <% @blogposts.each do |blogpost| %>
 
       <div class="blog-post">
@@ -25,11 +27,15 @@
 
     </div><!-- /.blog-main -->
     <% end %>
-    <nav class="blog-pagination">
-      <a class="btn btn-outline-primary" href="#">Older</a>
-      <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+    <nav class="pagination">
+      <%= will_paginate @blogposts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+      <%# <a class="btn btn-outline-primary" href="#">Older</a> %>
+      <%# <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a> %>
     </nav>
 
   </div><!-- /.row -->
 
+
 </main>
+</div>

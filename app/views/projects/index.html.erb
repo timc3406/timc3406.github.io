@@ -1,28 +1,27 @@
 <div class="container">
 <h1 class="display-3">Listing Projects</h1>
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
+<div class="row">
+<% @projects.each do |project| %>
+  <div class="col-12 col-md-6 col-lg-4 mb-5">
+  <div class="card border-0">
+  <a href=<%= project_path(project) %>>
+  <div class="embed-responsive embed-responsive-16by9">
+    <img class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="NumPy, SciPy, and Pandas: Correlation With Python" src=<%= image_path('irisflower.jpg') %> width="1920" height="1080" sizes="25vw">
+  </div>
+  </a>
+  <div class="card-body m-0 p-0 mt-2">
+  <a href=<%= project_path(project) %>>
+  <h2 class="card-title h4 my-0 py-0"><%= project.title %></h2>
+  </a>
+  <p class="card-text">
+  <small class="text-muted">
+  <span class="mr-2"><%= project.created_at %></span>
+  </small>
+  </p>
+  </div>
+  </div>
+  </div>
 
-  <% @projects.each do |project| %>
-    <tr>
-      <td><%= project.title %></td>
-      <td><%= project.text %></td>
-      <td><%= link_to 'Show', project_path(project) %></td>
-    </tr>
-  <% end %>
-</table>
+<% end %>
 </div>

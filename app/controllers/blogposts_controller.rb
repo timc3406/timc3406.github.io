@@ -1,6 +1,8 @@
 class BlogpostsController < ApplicationController
   def index
-    @blogposts = Blogpost.all
+    # @blogposts = Blogpost.all
+    # @blogposts = Blogpost.all.order("created_at DESC")
+    @blogposts = Blogpost.page(params[:page]).order('created_at DESC')
   end
 
   def new
