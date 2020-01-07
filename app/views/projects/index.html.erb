@@ -1,27 +1,36 @@
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="container">
-<h1 class="display-3">Listing Projects</h1>
 
-<div class="row">
-<% @projects.each do |project| %>
-  <div class="col-12 col-md-6 col-lg-4 mb-5">
-  <div class="card border-0">
-  <a href=<%= project_path(project) %>>
-  <div class="embed-responsive embed-responsive-16by9">
-    <img class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="NumPy, SciPy, and Pandas: Correlation With Python" src=<%= image_path('irisflower.jpg') %> width="1920" height="1080" sizes="25vw">
-  </div>
-  </a>
-  <div class="card-body m-0 p-0 mt-2">
-  <a href=<%= project_path(project) %>>
-  <h2 class="card-title h4 my-0 py-0"><%= project.title %></h2>
-  </a>
-  <p class="card-text">
-  <small class="text-muted">
-  <span class="mr-2"><%= project.created_at %></span>
-  </small>
-  </p>
-  </div>
-  </div>
-  </div>
+<main role="main" class="container-inside">
+  <% if account_signed_in? %>
+  <%= link_to 'New Project', new_project_path %>
+  <% end %>
+  <h1 class="display-3 text-center">Projects</h1>
 
-<% end %>
+  <div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-5">
+      <div class="card border-0">
+        <a href=<%= project_path(project) %>>
+          <div class="embed-responsive embed-responsive-16by9">
+            <img class="card-img-top m-0 p-0 embed-responsive-item rounded" style="object-fit: contain;" alt="NumPy, SciPy, and Pandas: Correlation With Python" src="https://i.imgur.com/ItgSjj3.jpg" width="1920" height="1080" sizes="25vw">
+          </div>
+        </a>
+      <div class="card-body m-0 p-0 mt-2">
+          <a href=<%= project_path(project) %>>
+            <h2 class="card-title h4 my-0 py-0"><%= project.title %></h2>
+          </a>
+        <p class="card-text">
+        <small class="text-muted">
+        <span class="mr-2"><%= project.created_at %></span>
+        </small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+</main>
 </div>

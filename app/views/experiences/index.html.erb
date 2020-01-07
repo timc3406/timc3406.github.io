@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+
+<main role="main" class="container-inside">
+
+<h1 class="display-3 text-center">Experiences</h1>
+
+<% if account_signed_in? %>
+<%= link_to 'New Experience', new_experience_path %>
+<% end %>
+
+<% @experiences.each do |experience| %>
+<section>
+  <nav>
+    <ul>
+      <img class="img-fluid rounded fit-image mb-3 mb-md-0" src=<%= experience.img_url || "https://i.imgur.com/ItgSjj3.jpg" %> width="350" height="150" sizes="25vw">
+    </ul>
+  </nav>
+
+  <article>
+    <h1><%= experience.title %></h1>
+    <p><%= experience.text %></p>
+    <p><%= experience.img_url %></p>
+    <p><%= experience.location %></p>
+    <p><%= link_to 'View', experience, class: "btn btn-primary"%>
+       <%= link_to 'Edit', edit_experience_path(experience), class: "btn btn-primary"%>
+       <%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+    </p>
+  </article>
+</section>
+<hr>
+<% end %>
+</main>
+</div>
+
+<%# <% @experiences.each do |experience| %>
+<!-- <div class="row">
+<div class="col-md-7"><img class="img-fluid rounded mb-3 mb-md-0" src="https://i.imgur.com/ItgSjj3.jpg" width="700" height="300" sizes="25vw"></div>
+<div class="col-md-5">
+  <%# <div class="row"><%= experience.title %></div> %>
+  <%# <div class="row"><%= experience.text %></div> %>
+  <%# <div class="row"><%= experience.img_url %></div> %>
+  <%# <div class="row"><%= experience.location %></div> %>
+  <%# <div class="row"><a class="btn btn-primary" href=<%= experience_path(experience)%> >View Project</a> link_to 'Show', experience  %>
+    <%# <%= link_to 'Edit', edit_experience_path(experience) %> %>
+    <%# <%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %> %>
+    </div>
+</div>
+</div>
+<hr> -->
+<%# <% end %>

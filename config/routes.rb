@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :experiences
   # get 'contactme/index'
   devise_for :accounts
   get 'welcome', to: 'welcome#index', as: 'welcome'

@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="container">
-<h1>Blogposts</h1>
-
-
-<%= link_to 'New Blogpost', new_blogpost_path %>
-
-<br>
 
 <main role="main" class="container">
-
+  <% if account_signed_in? %>
+  <%= link_to 'New Blogpost', new_blogpost_path %>
+  <% end %>
+  <h1 class="display-3 text-center">BlogPosts</h1>
   <div class="row">
-    <div class="col-md-8 blog-main">
+    <div class="col-md-10 blog-main">
 
       <% @blogposts.each do |blogpost| %>
 
@@ -20,10 +18,12 @@
 
         <p><%= blogpost.body %></p>
         <hr>
+
+        <% if account_signed_in? %>
         <%= link_to 'Show', blogpost %>
         <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
         <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+        <% end %>
 
     </div><!-- /.blog-main -->
     <% end %>
