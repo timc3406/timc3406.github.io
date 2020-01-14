@@ -2,14 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$font-stack:    "Times New Roman", serif;
+$font-stack:    "Arial", serif;
 $primary-color: #333;
 
-body {
+.welcome_body {
   font: 100% $font-stack;
   color: $primary-color;
 }
 
   .two-columns {
     column-count:2;
+  }
+
+  .four-columns {
+    column-count:4;
   }

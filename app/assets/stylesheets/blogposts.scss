@@ -10,7 +10,14 @@ $primary-color: #333;
     font: 100% $font-stack;
   }
 
-body {
-    font: 100% $font-stack;
-    color: $primary-color;
-  }
+// body {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+//   }
+.blogpost-show {
+  width: 100%;
+  max-width: 630px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 100px;
+}

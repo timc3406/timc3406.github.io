@@ -1,3 +1,6 @@
+$font-stack:    "Arial", serif;
+$primary-color: #333;
+
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -29,4 +32,9 @@
     border-top-right-radius: 0;
   }
 
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
 }

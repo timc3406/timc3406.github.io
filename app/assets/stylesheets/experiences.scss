@@ -5,7 +5,7 @@
 $font-stack:    "Arial", serif;
 $primary-color: #333;
 
-section {
+.timtest {
   display: -webkit-flex;
   display: flex;
 }
@@ -32,10 +32,10 @@ max-width: 100%;
     font: 100% $font-stack;
   }
 
-body {
-    font: 100% $font-stack;
-    color: $primary-color;
-  }
+// body {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+//   }
 
 .form-experience {
   width: 100%;
@@ -60,4 +60,30 @@ body {
     z-index: 2;
   }
 
+}
+
+.experience-show {
+  width: 100%;
+  max-width: 630px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 110px;
+}
+
+.experience-body {
+  width: 100%;
+  max-width: 750px;
+  padding: 15px;
+  margin: auto;
+  display: block;
+  margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  // margin-top: 100px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
