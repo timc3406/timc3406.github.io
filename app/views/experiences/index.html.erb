@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+
+<main role="main" class="container-inside">
+
+<h1 class="display-3 text-center">Experiences</h1>
+
+<% if account_signed_in? %>
+<%= link_to 'New Experience', new_experience_path %>
+<% end %>
+
+<% @experiences.each do |experience| %>
+<section class=timtest>
+  <nav>
+    <ul>
+      <img class="img-fluid rounded fit-image mb-3 mb-md-0" src=<%= experience.img_url || "https://i.imgur.com/ItgSjj3.jpg" %> width="350" height="150" sizes="25vw">
+    </ul>
+  </nav>
+
+  <article>
+    <h1><%= experience.title %></h1>
+    <p><%= experience.text %></p>
+    <p><%= experience.img_url %></p>
+    <p><%= experience.location %></p>
+    <p><%= link_to 'View', experience, class: "btn btn-primary"%>
+    <% if account_signed_in? %>
+       <%= link_to 'Edit', edit_experience_path(experience), class: "btn btn-primary"%>
+       <%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+    <% end %>
+    </p>
+  </article>
+</section>
+<hr>
+<% end %>
+</main>
+</div>

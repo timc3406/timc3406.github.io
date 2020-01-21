@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+<h1>New Experience</h1>
+<section class="form-experience text-center">
+<%= render 'form', experience: @experience %>
+
+<%= link_to 'Back', experiences_path %>
+</section>
+</div>

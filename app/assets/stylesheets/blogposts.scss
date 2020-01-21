@@ -1,3 +1,23 @@
 // Place all the styles related to the Blogposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$font-stack:    "Arial", serif;
+$primary-color: #333;
+
+.container
+  {
+    margin-top: 100px;
+    font: 100% $font-stack;
+  }
+
+// body {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+//   }
+.blogpost-show {
+  width: 100%;
+  max-width: 630px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 100px;
+}

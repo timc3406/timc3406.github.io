@@ -1,3 +1,89 @@
 // Place all the styles related to the Experiences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-stack:    "Arial", serif;
+$primary-color: #333;
+
+.timtest {
+  display: -webkit-flex;
+  display: flex;
+}
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.fit-image{
+width: 350px;
+object-fit: cover;
+height: 250px; /* only if you want fixed height */
+max-height: 100%;
+max-width: 100%;
+}
+
+.container
+  {
+    margin-top: 100px;
+    font: 100% $font-stack;
+  }
+
+// body {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+//   }
+
+.form-experience {
+  width: 100%;
+  max-width: 630px;
+  padding: 15px;
+  margin: auto;
+
+
+  .checkbox {
+    font-weight: 400;
+  }
+  .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px
+  }
+
+  .form-control:focus {
+    z-index: 2;
+  }
+
+}
+
+.experience-show {
+  width: 100%;
+  max-width: 630px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 110px;
+}
+
+.experience-body {
+  width: 100%;
+  max-width: 750px;
+  padding: 15px;
+  margin: auto;
+  display: block;
+  margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  // margin-top: 100px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}

@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <!-- <head>
-    <title>Timothychang</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Our Logo</a>
-    <form class="form-inline">
-    <button class="btn btn-outline-primary" type="button">Main button</button>
-    <div style="padding-left: 10px;">
-    <button class="btn btn-outline-success" type="button">Second button</button>
-    </div>
-    </form>
-    </nav>
-  </head> -->
   <head>
+    <link rel="shortcut icon" href="https://i.imgur.com/INkzLTU.png" type="image/x-icon" />
+
     <title>Timothychang</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,16 +13,16 @@
 
     <main role="main">
   </head>
+  <header>
+  <%= render 'layouts/nav/public' %>
+  </header>
   <body>
-    <header>
-    <%= render 'layouts/nav/public' %>
-    </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <class="container mt-3">
     <%= yield %>
     </class>
   </body>
-  <%= fa_icon "baby", text: "BB", class: 'mx-2', size: '3x' %>
   <%= render 'layouts/footer' %>
 </html>
