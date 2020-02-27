@@ -1,6 +1,6 @@
 class ExperiencesController < ApplicationController
   def index
-    @experiences = Experience.all
+    @experiences = Experience.all.order('created_at DESC')
   end
 
   def new
@@ -18,10 +18,21 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
   end
 
+  def edit
+    @experience = Experience.find(params[:id])
+  end
+
+  def update
+    @experience = Experience.find(params[:id])
+    @experience.update(title: params[:experience][:title], text: params[:experience][:text],
+    img_url: params[:experience][:img_url], location: params[:experience][:location])
+    redirect_to experience_path(@experience)
+  end
+
   def destroy
     @experience = Experience.find(params[:id])
     @experience.destroy
-    redirect_to "experiences/index", :notice => "Your patient has been deleted"
+    redirect_to experiences_url, :notice => "Your patient has been deleted"
   end
 
   private

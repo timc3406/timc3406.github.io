@@ -17,14 +17,15 @@
         <p class="blog-post-meta"><%= blogpost.created_at %> by <a href="#">Timothy Chang</a></p>
 
         <p><%= blogpost.body %></p>
-        <hr>
 
+
+        <p><%= link_to 'View', blogpost, class: "btn btn-primary btn-sm"%>
         <% if account_signed_in? %>
-        <%= link_to 'Show', blogpost %>
-        <%= link_to 'Edit', edit_blogpost_path(blogpost) %>
-        <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %>
+           <%= link_to 'Edit', edit_blogpost_path(blogpost), class: "btn btn-primary btn-sm"%>
+           <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm"%>
         <% end %>
-
+        </p>
+        <hr>
     </div><!-- /.blog-main -->
     <% end %>
     <nav class="pagination">

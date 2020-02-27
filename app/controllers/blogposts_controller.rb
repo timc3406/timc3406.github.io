@@ -9,15 +9,30 @@ class BlogpostsController < ApplicationController
   end
 
   def create
-    # render plain: params[:project].inspect
     @blogpost = Blogpost.new(blogpost_params)
 
     @blogpost.save
     redirect_to @blogpost
   end
 
+  def edit
+    @blogpost = Blogpost.find(params[:id])
+  end
+
+  def update
+    @blogpost = Blogpost.find(params[:id])
+    @blogpost.update(title: params[:blogpost][:title], body: params[:blogpost][:body])
+    redirect_to blogpost_path(@blogpost)
+  end
+
   def show
     @blogpost = Blogpost.find(params[:id])
+  end
+
+  def destroy
+    @blogpost = Blogpost.find(params[:id])
+    @blogpost.destroy
+    redirect_to blogposts_url, :notice => "Your post has been deleted"
   end
 
   private

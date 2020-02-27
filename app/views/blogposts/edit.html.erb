@@ -1,6 +1,11 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<section class="blogpost-show">
+
 <h1>Editing Blogpost</h1>
 
 <%= render 'form', blogpost: @blogpost %>
 
 <%= link_to 'Show', @blogpost %> |
 <%= link_to 'Back', blogposts_path %>
+
+</section>

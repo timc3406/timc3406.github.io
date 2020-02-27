@@ -3,12 +3,10 @@
 <div class="container">
 
 <main role="main" class="container-inside">
-
+  <% if account_signed_in? %>
+  <%= link_to 'New Experience', new_experience_path %>
+  <% end %>
 <h1 class="display-3 text-center">Experiences</h1>
-
-<% if account_signed_in? %>
-<%= link_to 'New Experience', new_experience_path %>
-<% end %>
 
 <% @experiences.each do |experience| %>
 <section class=timtest>

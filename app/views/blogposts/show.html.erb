@@ -1,13 +1,12 @@
-<section class="blogpost-show text-center">
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<section class="blogpost-show">
   <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @blogpost.title %>
+  <h1><%= @blogpost.title %></h1>
 </p>
 
 <p>
-  <strong>Text:</strong>
   <%= @blogpost.body %>
 </p>
 
@@ -15,3 +14,4 @@
   <%= link_to 'Edit', edit_blogpost_path(@blogpost) %> |
 <% end %>
 <%= link_to 'Back', blogposts_path %>
+</section>

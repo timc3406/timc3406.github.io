@@ -1,11 +1,22 @@
-<h1>Show Project</h1>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<section class="project-show">
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<img class="img-fluid rounded fit-image mb-3 mb-md-0 center" src=<%= @project.img_url || "https://i.imgur.com/ItgSjj3.jpg" %> width="350" height="150" sizes="25vw">
+<p><%= @project.github_link %></p>
+<h1>
   <%= @project.title %>
-</p>
+</h1>
+<p><%= @project.text %></p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @project.text %>
+Created at: <%= @project.created_at.to_date %>
 </p>
+
+
+
+<% if account_signed_in? %>
+  <%= link_to 'Edit', edit_project_path(@project) %>
+<% end %>
+<%= link_to 'Back', projects_path %>
+</section>

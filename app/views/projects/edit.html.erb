@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<section class="project-show text-center">
+  <h1>Editing Porject</h1>
+
+<%= render 'form', project: @project %>
+
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>
+</section>
